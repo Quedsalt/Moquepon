@@ -3,6 +3,8 @@ function iniciarJuego(){
     botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador)
 }
 
+//seleccionador de mascota
+
 function seleccionarMascotaJugador(){
     let inputHipoge = document.getElementById("Hipoge")
     let inputCapipego = document.getElementById("Capipego")
@@ -10,22 +12,27 @@ function seleccionarMascotaJugador(){
     let inputLangostelvis = document.getElementById("Langostelvis")
     let inputTucapalma = document.getElementById("Tucapalma")
     let inputPydos = document.getElementById("Pydos")
+    let spanMascotaJugador = document.getElementById("mascota-jugador")
+
+    //informe de sellecion de mascota
 
     if (inputHipoge.checked) {
-        alert("Seleccionaste a  Hipoge")
+        spanMascotaJugador.innerHTML = "Hipoge"
     } else if (inputCapipego.checked) {
-        alert(" Seleccionaste a Capipego")
+        spanMascotaJugador.innerHTML = "Capipego"
     } else if (inputRatigueya.checked) {
-        alert(" Seleccionaste a Ratigueya")
+        spanMascotaJugador.innerHTML = "Ratigueya"
     } else if (inputLangostelvis.checked) {
-        alert(" Seleccionaste a Langostelvis")
+        spanMascotaJugador.innerHTML = "Langostelvis"
     } else if (inputTucapalma.checked) {
-        alert(" Seleccionaste a Tucupalma")
+        spanMascotaJugador.innerHTML = "Tucapalma"
     } else if (inputPydos.checked) {
-        alert(" Seleccionaste a Pydos")
+        spanMascotaJugador.innerHTML = "Pydos"
     } else {
         alert("No has elegido ninguna mascota")
     }
 }
+
+//informe de html cargado
 
 window.addEventListener("load", iniciarJuego)
