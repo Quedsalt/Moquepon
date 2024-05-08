@@ -1,0 +1,31 @@
+.titulo {
+    text-align: center;
+    position: relative;
+    display: block;
+}
+
+.titulo span {
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(to right, #ff0000, #0602ff, #2bff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 1;
+}
+
+.titulo::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 400;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo con transparencia */
+    z-index: 0;
+    transform: translateY(-50%);
+}
+.titulo {
+    text-align: center;
+    background: linear-gradient(to right, #ff0000, #53c2ee, #2bff00); /* Fondo con degradado de colores */
+    background-size: 100% auto; /* Ajusta el tamaño del fondo horizontalmente */
+}
