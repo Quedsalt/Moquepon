@@ -14,6 +14,9 @@ function iniciarJuego(){
     botonAgua.addEventListener("click", ataqueAgua)
     let botonTierra = document.getElementById("boton-Tierra")
     botonTierra.addEventListener("click", ataqueTierra)
+
+    let botonReiniciar = document.getElementById("boton-reiniciar")
+    botonReiniciar.addEventListener("click", reiniciarJuego)    
 }
 
 //SELECCIONAR MASCOTAS
@@ -153,6 +156,17 @@ function crearMensajeFinal(resultadoFinal) {
     parrafo.innerHTML = resultadoFinal
 
     sectionMensajes.appendChild(parrafo)
+
+    let botonFuego = document.getElementById("boton-Fuego")
+    botonFuego.disabled = true
+    let botonAgua = document.getElementById("boton-Agua")
+    botonAgua.disabled = true
+    let botonTierra = document.getElementById("boton-Tierra")
+    botonTierra.disabled = true
+}
+
+function reiniciarJuego() {
+    location.reload()
 }
 
 //ALEATORIDAD
