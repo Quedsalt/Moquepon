@@ -1,7 +1,9 @@
 let ataqueJugador 
 let ataqueEnemigo
+let vidasJugador = 3
+let vidasEnemigo = 3
 
-//inicializacion de procesos del juego
+//INICIALIZACION DE PROCESOS DEL JUEGO
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById("boton-mascotas")
     botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador)
@@ -14,7 +16,7 @@ function iniciarJuego(){
     botonTierra.addEventListener("click", ataqueTierra)
 }
 
-//seleccionador de mascota
+//SELECCIONAR MASCOTAS
 function seleccionarMascotaJugador(){
     let inputHipodoge = document.getElementById("Hipodoge")
     let inputCapipego = document.getElementById("Capipego")
@@ -46,7 +48,7 @@ function seleccionarMascotaJugador(){
 
 }
 
-//seleccion aleatoria de maascota enemiga
+//SELECCION ALEATORIA DE MASCOTAS ENEMIGAS
 function seleccionarMascotaEnemigo(){
     let Mascotaleatorio = aleatorio(1, 6)
     let spanMascotaEnemigo = document.getElementById("mascota-enemigo")
@@ -66,6 +68,7 @@ function seleccionarMascotaEnemigo(){
     } 
 }
 
+//ATAQUES
 function  ataqueFuego(){
     ataqueJugador = "FUEGO"
     ataqueAleatorioEnemigo()
@@ -94,23 +97,47 @@ function ataqueAleatorioEnemigo() {
     combate()
 }
 
+//COMBATE
 function combate () {
- //Combate
+    let spanVidasJugador = document.getElementById("vidas-jugador")
+    let spanVidasEnemigo = document.getElementById("vidas-enemigo")
+
     
     if(ataqueEnemigo == ataqueJugador) {
         crearMensaje("EMPATE ⚔️")
     } else if(ataqueJugador == "FUEGO" && ataqueEnemigo == "TIERRA") {
         crearMensaje("GANASTE 👑")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     } else if(ataqueJugador == "AGUA" && ataqueEnemigo == "FUEGO") {
-        crearMensaje("Ganaste 👑")
+        crearMensaje("GANASTE 👑")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     } else if(ataqueJugador == "TIERRA" && ataqueEnemigo == "AGUA") {
         crearMensaje("GANASTE 👑")
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     } else {
         crearMensaje("PERDISTE 😞")
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
+    }
+
+    
+    revisarVidas()
+}
+
+//REVISAR LAS VIDAS
+function revisarVidas() {
+    if(vidasEnemigo == 0){
+        crearMensajeFinal("FELICITACIONES! Ganaste👑")
+    } else if(vidasJugador == 0){
+        crearMensajeFinal("Lo siento, perdiste😞")   
     }
 }
 
-function crearMensaje (resultado) {
+//informe de batalla
+function crearMensaje(resultado) {
     let sectionMensajes = document.getElementById("mensajes")
 
     let parrafo = document.createElement("p")
@@ -119,10 +146,19 @@ function crearMensaje (resultado) {
     sectionMensajes.appendChild(parrafo)
 }
 
-//aleatoriedad
+function crearMensajeFinal(resultadoFinal) {
+    let sectionMensajes = document.getElementById("mensajes")
+
+    let parrafo = document.createElement("p")
+    parrafo.innerHTML = resultadoFinal
+
+    sectionMensajes.appendChild(parrafo)
+}
+
+//ALEATORIDAD
 function aleatorio(min, max){
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-//informe de html cargado
+//INFORME DE HTML CARGADO
 window.addEventListener("load", iniciarJuego)
