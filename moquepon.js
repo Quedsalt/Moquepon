@@ -36,9 +36,6 @@ function seleccionarMascotaJugador(){
     let inputHipodoge = document.getElementById("Hipodoge")
     let inputCapipego = document.getElementById("Capipego")
     let inputRatigueya = document.getElementById("Ratigueya")
-    let inputLangostelvis = document.getElementById("Langostelvis")
-    let inputTucapalma = document.getElementById("Tucapalma")
-    let inputPydos = document.getElementById("Pydos")
     let spanMascotaJugador = document.getElementById("mascota-jugador")
 
  //informe de sellecion de mascota
@@ -49,12 +46,6 @@ function seleccionarMascotaJugador(){
         spanMascotaJugador.innerHTML = "Capipego"
     } else if (inputRatigueya.checked) {
         spanMascotaJugador.innerHTML = "Ratigueya"
-    } else if (inputLangostelvis.checked) {
-        spanMascotaJugador.innerHTML = "Langostelvis"
-    } else if (inputTucapalma.checked) {
-        spanMascotaJugador.innerHTML = "Tucapalma"
-    } else if (inputPydos.checked) {
-        spanMascotaJugador.innerHTML = "Pydos"
     } else {
         alert("No has elegido ninguna mascota")
     }
@@ -65,22 +56,16 @@ function seleccionarMascotaJugador(){
 
 //SELECCION ALEATORIA DE MASCOTAS ENEMIGAS
 function seleccionarMascotaEnemigo(){
-    let Mascotaleatorio = aleatorio(1, 6)
+    let Mascotaleatorio = aleatorio(1, 3)
     let spanMascotaEnemigo = document.getElementById("mascota-enemigo")
         
     if (Mascotaleatorio == 1) {
         spanMascotaEnemigo.innerHTML = "Hipodoge"
     } else if (Mascotaleatorio == 2) {
         spanMascotaEnemigo.innerHTML = "Capipego"
-    } else if (Mascotaleatorio == 3) {
+    } else  {
         spanMascotaEnemigo.innerHTML = "Ratigueya"
-    } else if (Mascotaleatorio == 4) {
-        spanMascotaEnemigo.innerHTML = "Langostelvis"
-    } else if (Mascotaleatorio == 5) {
-        spanMascotaEnemigo.innerHTML = "Tucapalma"
-    } else {
-        spanMascotaEnemigo.innerHTML = "Pydos"
-    } 
+    }
 }
 
 //ATAQUES
