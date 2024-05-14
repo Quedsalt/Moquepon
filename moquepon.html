@@ -4,31 +4,44 @@
         <meta charset="UTF-8">
         <title>MOKEPON!</title>
 
-        <script src="./moquepon.js"></script>
+        <script src="./js/moquepon.js"></script>
         <link rel="stylesheet" href="./Styles.css">
     </head>
     <body>
-        <h1 class="titulo">
-            <span>MOKEPON!</span>
-        </h1>   
 
         <section id="seleccionar-mascota">
-            <h2>Elige a tu mascota:</h2>
+            <h1 class="titulo">Mokepon!</h1>  
+           
+            <h2 class="subtitulo">Elige a tu mascota:</h2>
+
+            <div class="tarjetas">
         
-            <label for="Hipodoge">Hipodoge</label>
-            <input type="radio" name="mascota" id="Hipodoge"/>
-        
-            <label for="Capipego">Capipego</label>
-            <input type="radio" name="mascota" id="Capipego"/>
-        
-            <label for="Ratigueya">Ratigueya</label>
-            <input type="radio" name="mascota" id="Ratigueya"/>
+                <label class="tarjeta-de-mokepon" for="Hipodoge">
+                    <p>Hipodoge</p>
+                    <img src="./assents/megaHipodogue-image-2024-05-14T14_23_58.281Z.jpeg" alt="Hipodoge">
+                </label>
+                <input type="radio" name="mascota" id="Hipodoge"/>
+            
+                <label class="tarjeta-de-mokepon" for="Capipego">
+                    <p>Capipego</p>
+                    <img src="./assents/carpincho-image-2024-05-14T14_24_43.868Z.jpeg" alt="">
+                </label>
+                <input type="radio" name="mascota" id="Capipego"/>
+            
+                <label class="tarjeta-de-mokepon" for="Ratigueya">
+                    <p>Ratigueya</p>
+                    <img src="./assents/pydos-6e458237-73df-40fb-be7c-2d4b477be360.webp" alt="Ratigueya">
+                </label>
+                <input type="radio" name="mascota" id="Ratigueya"/>
+            </div>
 
             <button id="boton-mascotas">Seleccionar</button>
-        </section>
 
+        </section>
+      
         <section id="seleccionar-ataque">
-            <h2 id="eligeAtaque">Elige tu ataque:</h2>
+            <h1 class="titulo">MOKEPON!</h1>
+            <h2>Elige tu ataque:</h2>
 
             <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
             <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>

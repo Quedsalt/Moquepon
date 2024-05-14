@@ -1,3 +1,52 @@
-h1 {
-    color: cyan;
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+body {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #0e1e75;
+
+}
+
+#seleccionar-mascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    color: #00ffc8;
+    text-align: center;
+    font-size: 60px;
+}
+
+.subtitulo {
+    color: #00ffc8;
+    font-size
+}
+
+.tarjetas {
+    display: flex;
+    gap: 10px;
+}
+
+.tarjeta-de-mokepon {
+    width: 200px;
+    height: 240px;
+    background: #00ffc8;
+    color: #4c00ff;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.tarjeta-de-mokepon img {
+    width: 180px;
+    height: 157px;
+}
+
+input {
+    display: none;
 }
