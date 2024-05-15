@@ -15,24 +15,23 @@
             <h2 class="subtitulo">Elige a tu mascota:</h2>
 
             <div class="tarjetas">
-        
+                <input type="radio" name="mascota" id="Hipodoge"/>
                 <label class="tarjeta-de-mokepon" for="Hipodoge">
                     <p>Hipodoge</p>
                     <img src="./assents/megaHipodogue-image-2024-05-14T14_23_58.281Z.jpeg" alt="Hipodoge">
                 </label>
-                <input type="radio" name="mascota" id="Hipodoge"/>
             
+                <input type="radio" name="mascota" id="Capipego"/>
                 <label class="tarjeta-de-mokepon" for="Capipego">
                     <p>Capipego</p>
                     <img src="./assents/carpincho-image-2024-05-14T14_24_43.868Z.jpeg" alt="">
                 </label>
-                <input type="radio" name="mascota" id="Capipego"/>
             
+                <input type="radio" name="mascota" id="Ratigueya"/>
                 <label class="tarjeta-de-mokepon" for="Ratigueya">
                     <p>Ratigueya</p>
                     <img src="./assents/pydos-6e458237-73df-40fb-be7c-2d4b477be360.webp" alt="Ratigueya">
                 </label>
-                <input type="radio" name="mascota" id="Ratigueya"/>
             </div>
 
             <button id="boton-mascotas">Seleccionar</button>
@@ -50,21 +49,26 @@
                 <button id="boton-Tierra" class="boton-de-ataque">Tierra 🌱</button>
             </div>
 
-            <div>
-                <section id="mensajes">
-                </section>
-        
+            <div id="mensajes">
+                <p id="resultado">⚔️Preparate para la batalla⚔️</p>
+            
                 <section id="reiniciar">
                     <button id="boton-reiniciar">Reiniciar</button>
                 </section>
             </div>
-
-            <div>
-                <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
-                <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
+        
+            <div class="ataques">
+                <div class="ataques-jugador">
+                    <p id="vidas-jugador">3</p>
+                    <p id="mascota-jugador"></p>
+                    <div id="ataques-Del-jugador"></div>
+                </div>
+                <div class="ataques-enemigo">
+                    <p id="vidas-enemigo">3</p>
+                    <p id="mascota-enemigo"></p>
+                    <div id="ataques-Del-enemigo"></div>
+                </div>
             </div>
-            
         </section>
-
     </body>
 </html>
