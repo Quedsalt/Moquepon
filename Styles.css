@@ -34,11 +34,11 @@ body {
     width: 200px;
     height: 240px;
     background: #00ffc8;
-    color: #4c00ff;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 20px;
     text-align: center;
+    color: #4c00ff;
 }
 
 .tarjeta-de-mokepon img {
@@ -62,7 +62,16 @@ input {
 }
 
 #seleccionar-ataque {
-    display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.boton-de-ataque {
+    background-color: #00ffc8;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    width: 100px;
+    color: #4c00ff;
+    font-family: "Poetsen One", sans-serif;
 }
