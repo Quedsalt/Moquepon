@@ -57,9 +57,6 @@ body {
     font-family: "Poetsen One", sans-serif;
 }
 
-input {
-/*     display: none; */
-}
 input:checked + label{
     background-color:#55c1ff;
 }
