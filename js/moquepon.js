@@ -37,6 +37,8 @@ let inputHipodoge
 let inputCapipego
 let inputRatigueya
 
+let mascotaJugador
+
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -121,16 +123,33 @@ function seleccionarMascotaJugador(){
 
     if (inputHipodoge.checked) {
         spanMascotaJugador.innerHTML = inputHipodoge.id 
+        mascotaJugador = inputHipodoge.id 
+
     } else if (inputCapipego.checked) {
         spanMascotaJugador.innerHTML = inputCapipego.id
+        mascotaJugador = inputCapipego.id
+
     } else if (inputRatigueya.checked) {
         spanMascotaJugador.innerHTML = inputRatigueya.id
+        mascotaJugador = inputRatigueya.id
     } else {
         alert("No has elegido ninguna mascota")
     }
 
-    seleccionarMascotaEnemigo()
+    extraerAtaques(mascotaJugador)
 
+    seleccionarMascotaEnemigo()
+}
+
+function extraerAtaques(mascotaJugador) {
+    let ataques 
+    for (let i = 0; i < mokepones.length; i++) {
+        if (mascotaJugador ===  mokepones[i].nombre) {
+            ataques = mokepones[i].ataques
+        }
+        
+    }
+    mostrarAtaques(ataques)
 }
 
 //SELECCION ALEATORIA DE MASCOTAS ENEMIGAS
