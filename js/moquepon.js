@@ -120,11 +120,11 @@ function seleccionarMascotaJugador(){
   //informe de sellecion de mascota
 
     if (inputHipodoge.checked) {
-        spanMascotaJugador.innerHTML = "Hipodoge"
+        spanMascotaJugador.innerHTML = inputHipodoge.id 
     } else if (inputCapipego.checked) {
-        spanMascotaJugador.innerHTML = "Capipego"
+        spanMascotaJugador.innerHTML = inputCapipego.id
     } else if (inputRatigueya.checked) {
-        spanMascotaJugador.innerHTML = "Ratigueya"
+        spanMascotaJugador.innerHTML = inputRatigueya.id
     } else {
         alert("No has elegido ninguna mascota")
     }
@@ -135,15 +135,9 @@ function seleccionarMascotaJugador(){
 
 //SELECCION ALEATORIA DE MASCOTAS ENEMIGAS
 function seleccionarMascotaEnemigo(){
-    let Mascotaleatorio = aleatorio(1, 3)
+    let Mascotaleatorio = aleatorio(0, mokepones.length -1)
         
-    if (Mascotaleatorio == 1) {
-        spanMascotaEnemigo.innerHTML = "Hipodoge"
-    } else if (Mascotaleatorio == 2) {
-        spanMascotaEnemigo.innerHTML = "Capipego"
-    } else  {
-        spanMascotaEnemigo.innerHTML = "Ratigueya"
-    }
+    spanMascotaEnemigo.innerHTML = mokepones[Mascotaleatorio].nombre
 }
 
 //ATAQUES
