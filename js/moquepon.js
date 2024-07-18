@@ -39,6 +39,7 @@ let ataquesMokepon
 let botonAgua
 let botonFuego
 let botonTierra
+let botones = []
 let vidasJugador = 3
 let vidasEnemigo = 3
 
@@ -148,7 +149,7 @@ function extraerAtaques(mascotaJugador) {
 function mostrarAtaques(ataques) {
     ataques.forEach((ataque) => {
         ataquesMokepon = `
-        <button id=${ataque.id} class="boton-de-ataque">${ataque.nombre}</button>
+        <button id=${ataque.id} class="boton-de-ataque  BAtaque">${ataque.nombre}</button>
         `
         contenedorAtaques.innerHTML += ataquesMokepon
     })
@@ -156,17 +157,27 @@ function mostrarAtaques(ataques) {
     botonAgua = document.getElementById("boton-Agua")
     botonTierra = document.getElementById("boton-Tierra")
     botonFuego = document.getElementById("boton-Fuego")
+    botones = document.querySelectorAll(".BAtaque")    
 
     botonFuego.addEventListener("click", ataqueFuego)
     botonAgua.addEventListener("click", ataqueAgua)
     botonTierra.addEventListener("click", ataqueTierra)
 }
 
+function secuenciaAtaque(){
+    botones.forEach((boton) => {
+        boton.addEventListener("click", (e) => {
+            console.log(e)
+        })
+    })
+}
+
 //SELECCION ALEATORIA DE MASCOTAS ENEMIGAS
 function seleccionarMascotaEnemigo(){
-    let Mascotaleatorio = aleatorio(0, mokepones.length -1)
+    let MascotaAleatorio = aleatorio(0, mokepones.length -1)
         
-    spanMascotaEnemigo.innerHTML = mokepones[Mascotaleatorio].nombre
+    spanMascotaEnemigo.innerHTML = mokepones[MascotaAleatorio].nombre
+    secuenciaAtaque()
 }
 
 //ATAQUES
