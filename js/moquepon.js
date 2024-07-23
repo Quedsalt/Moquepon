@@ -26,7 +26,7 @@ const contenedorTarjetas = document.getElementById("contenedorTarjetas")
 const contenedorAtaques = document.getElementById("contendeorAtaques")
 
 let mokepones = []
-let ataqueJugador 
+let ataqueJugador = []
 let ataqueEnemigo
 let opcionDeMokepones
 
@@ -134,6 +134,7 @@ function seleccionarMascotaJugador(){
 
     seleccionarMascotaEnemigo()
     extraerAtaques(mascotaJugador)
+    secuenciaAtaque()
 }
 
 function extraerAtaques(mascotaJugador) {
@@ -159,15 +160,24 @@ function mostrarAtaques(ataques) {
     botonFuego = document.getElementById("boton-Fuego")
     botones = document.querySelectorAll(".BAtaque")    
 
-    botonFuego.addEventListener("click", ataqueFuego)
-    botonAgua.addEventListener("click", ataqueAgua)
-    botonTierra.addEventListener("click", ataqueTierra)
 }
 
 function secuenciaAtaque(){
     botones.forEach((boton) => {
         boton.addEventListener("click", (e) => {
-            console.log(e)
+            if (e.target.textContent === "🔥"){
+                ataqueJugador.push("FUEGO")
+                console.log(ataqueJugador)
+                boton.style.background = "#112f58"
+            }else if (e.target.textContent === "💧"){
+                ataqueJugador.push("AGUA")
+                console.log(ataqueJugador)
+                boton.style.background = "#112f58"
+            }else {
+                ataqueJugador.push("TIERRA")
+                console.log(ataqueJugador)
+                boton.style.background = "#112f58"
+            }
         })
     })
 }
@@ -181,18 +191,6 @@ function seleccionarMascotaEnemigo(){
 }
 
 //ATAQUES
-function  ataqueFuego(){
-    ataqueJugador = "FUEGO"
-    ataqueAleatorioEnemigo()
-}
-function  ataqueAgua(){
-    ataqueJugador = "AGUA"
-    ataqueAleatorioEnemigo()
-}
-function  ataqueTierra(){
-    ataqueJugador = "TIERRA"
-    ataqueAleatorioEnemigo()
-}
 
 function ataqueAleatorioEnemigo() {
     let ataqueAleatorio = aleatorio(1, 3)
